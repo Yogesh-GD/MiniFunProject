@@ -5,19 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>will you....?</title>
     <style>
-        body{
+        body {
             background-color: rgb(255, 100, 234);
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        div{
-            height: 80vh;
-           
+        
+        .btn{
+            display: flex;
+            justify-content: space-between;
         }
+
+        button{
+            background: rgb(255, 0, 221);
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
     </style>
+   
 </head>
 <body>
-    <div> <img src="https://yogesh-gd.github.io/MiniFunProject/ghost.gif" alt=""></div>
+    <div> 
+        <h1 class="title" id="title">Let's make this year with memories and together pics</h1>
+        <img src="https://yogesh-gd.github.io/MiniFunProject/yes.gif" class="gif" id="gif" alt="">
+
+        <div class="btn" >
+        <button class="yesbtn" id="yesbtn" onclick="yesHandle()">
+            Let's go....
+        </button>
+        <button class="nobtn" id="nobtn" onclick="noHandle()">
+            No..
+        </button>
+    </div>
+
+    </div>
+
+
+   <script> 
+
+    let yesbtn=document.getElementById('yesbtn');
+    let nobtn=document.getElementById('nobtn');
+    let title=document.getElementById('title');
+    let git=document.getElementById('git');
+    const yesHandle=()=>{
+        title.innerText="Let's make everymoment unforgettable.... Ab chal ek smile kr de";
+        gif.src="https://yogesh-gd.github.io/MiniFunProject/yes1.gif"
+        yesbtn.innerText="acha shi se man gyi wrna...."
+        nobtn.style.visibility="hidden";
+    }
+    const noHandle=()=>{
+        nobtn.innerText="think again";
+        title.innerText="think again";
+        gif.src="https://yogesh-gd.github.io/MiniFunProject/no1.gif"
+        gif.style.mixBlendMode="darken";
+        nobtn.setAttribute("onClick",'noHandl1()')
+    }
+    const noHandl1=()=>{
+        nobtn.innerText="you are thinking wrong";
+        title.innerText="you are thinking wrong";
+        gif.src="https://yogesh-gd.github.io/MiniFunProject/no-oh.gif"
+        gif.style.mixBlendMode="";
+        nobtn.setAttribute("onClick",'noHandl2()');
+    }
+
+    const  noHandl2=()=>{
+        nobtn.style.visibility="hidden";
+        gif.src="https://yogesh-gd.github.io/MiniFunProject/cat-nani.gif"
+        yesbtn.innerText="You only have this option Select this.."
+        title.innerText="you can't say no..";
+    }
+   </script>
 </body>
+
+
 </html>
